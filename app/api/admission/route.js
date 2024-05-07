@@ -4,17 +4,50 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
-  const { fullname, email, message } = await req.json();
-
-  //console.log(fullname, email, message);
-
+  const {
+    firstName,
+    lastName,
+    fathersName,
+    email,
+    phone,
+    sex,
+    dob,
+    religion,
+    nationality,
+    bloodGroup,
+    presentAddress,
+    permanentAddress,
+    mothersName,
+    category,
+    localGuardian,
+    courseName,
+    courseType,
+    wasStudent,
+  } = await req.json();
   try {
     await connectDB();
-
-    await Admission.create({ fullname, email, message });
-
+    await Admission.create({
+      firstName,
+      lastName,
+      email,
+      phone,
+      sex,
+      dob,
+      religion,
+      nationality,
+      bloodGroup,
+      presentAddress,
+      permanentAddress,
+      fathersName,
+      mothersName,
+      category,
+      localGuardian,
+      courseName,
+      courseType,
+      wasStudent,
+    });
     return NextResponse.json({
-      msg: ["Message sent succesfully!"],
+      msg: ["Message sent successfully!"],
       success: true,
     });
   } catch (error) {
@@ -26,9 +59,9 @@ export async function POST(req) {
       console.log(errorList);
       return NextResponse.json({ msg: errorList });
     } else {
-      return NextResponse.json({ msg: ["Unable to send message."] });
+      return NextResponse.json({
+        msg: ["Unable to submit form. Please check the internet connection and try after sometime!"],
+      });
     }
   }
-
-  //return NextResponse.json({ msg: ["From contact route"] });
 }

@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-form>div{
-  @apply flex flex-col gap-2
+form {
+  @apply m-4;
 }
 
-input, textarea{
-  @apply shadow-md px-6 py-2 border border-slate-300
+input,
+textarea,
+select {
+  @apply shadow-md px-6 py-2 border border-slate-300 mt-5 mr-2 text-[#444];
+}
+
+select {
+  @apply shadow-md px-6 py-2 border border-slate-300 max-w-[260px];
+}
+
+input[type="date"]:before {
+  content: attr(placeholder);
+  color: #444;
 }
