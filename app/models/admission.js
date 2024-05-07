@@ -82,7 +82,7 @@ const admissionSchema = new Schema({
   },
   presentAddress: {
     type: String,
-    required: [true, "Present Address is required"],
+    
   },
   permanentAddress: {
     type: String,

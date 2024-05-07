@@ -101,29 +101,25 @@ const ContactForm = () => {
     if (success) {
       setFirstName("");
       setEmail("");
+      setLastName("");
+      setFathersName("");
+      setPhone("");
+      setSex("");
+      setDob("");
+      setReligion("");
+      setNationality("");
+      setBloodGroup("");
+      setPermanentAddress("");
+      setPresentAddress("");
+      setMothersName("");
+      setCategory("");
+      setLocalGuardian("");
+      setCourseName("");
+      setCourseType("");
+      setWasStudent("");
     }
   };
 
-  console.log(
-    firstName,
-    lastName,
-    fathersName,
-    email,
-    phone,
-    sex,
-    dob,
-    religion,
-    nationality,
-    bloodGroup,
-    presentAddress,
-    permanentAddress,
-    mothersName,
-    category,
-    localGuardian,
-    courseName,
-    courseType,
-    wasStudent
-  );
   return (
     <>
       <form onSubmit={handleSubmit} className="m-6">
