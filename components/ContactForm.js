@@ -296,6 +296,7 @@ const ContactForm = () => {
           )}
         </div>
         <div className="flex flex-col md:flex-row">
+          {/* <label>Present Address</label> */}
           <textarea
             className="md:w-1/3  "
             rows="4"
@@ -305,7 +306,7 @@ const ContactForm = () => {
           />
           <div className="flex flex-col">
             <div className="flex  my-auto items-center justify-center">
-              <p className="mr-2">Is addresses are same?</p>
+              <p className="mr-1">Is present & permanent addresses are same?</p>
               <input
                 className="mt-2 mb-1 size-5"
                 type="checkbox"
@@ -323,14 +324,17 @@ const ContactForm = () => {
               placeholder="Present Address"
             />
           )}
+          {/* <label className="absolute">Permanent Address</label> */}
           {sameAddress && (
-            <textarea
-              className="md:w-1/3 "
-              rows="4"
-              value={permanentAddress}
-              placeholder="Present Address"
-              onChange={(e) => setPermanentAddress(e.target.value)}
-            />
+            <>
+              <textarea
+                className="md:w-1/3 "
+                rows="4"
+                value={permanentAddress}
+                placeholder="Present Address"
+                onChange={(e) => setPresentAddress(e.target.value)}
+              />
+            </>
           )}
         </div>
         <p className="mt-6 mr-2 flex ">Have you admitted earlier?</p>
