@@ -68,7 +68,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("api/admission", {
+    const res = await fetch("https://admission-form-gihs.vercel.app/api/admission", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
