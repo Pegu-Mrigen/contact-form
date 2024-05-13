@@ -10,7 +10,7 @@ const ProductList = () => {
   const makePayment = async ({ productId = null }) => {
     const key = process.env.RAZORPAY_API_KEY;
     console.log(key);
-    const data = await fetch("http://localhost:3000/api/razorpay");
+    const data = await fetch("https://admission-form-kbpb.onrender.com/api/razorpay");
     const { order } = await data.json();
     console.log(order.id);
     const options = {
@@ -20,7 +20,7 @@ const ProductList = () => {
       amount: order.amount,
       order_id: order.id,
       description: "Integration of Razorpay",
-      image: "http://localhost:3000/_next/image?url=%2Flogo.jpg&w=64&q=75",
+      image: "https://portfolio-ac-sigma.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.8a59b791.png&w=640&q=75",
       handler: async function (response) {
          if (response.length == 0) return <Loading />;
         // if (response.status == "unprocessed") {
