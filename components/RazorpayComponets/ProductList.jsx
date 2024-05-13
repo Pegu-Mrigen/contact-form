@@ -2,7 +2,7 @@
 import React, { Suspense } from "react";
 import Product from "./Product";
 import { useRouter } from "next/navigation";
-import Loading from "../../components/Loading";
+//import Loading from "../../components/Loading";
 
 const ProductList = () => {
   const router = useRouter();
@@ -73,7 +73,8 @@ const ProductList = () => {
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}> */}
+      <Suspense >
         <Product makePayment={makePayment} />
       </Suspense>
     </>
