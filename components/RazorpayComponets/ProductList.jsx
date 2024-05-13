@@ -45,7 +45,7 @@ const ProductList = () => {
           router.push("/paymentsuccess");
         }
 
-        if (res?.message == "success") {
+        if (res?.message) {
           console.log("redirected.......");
           router.push(
             "/paymentsuccess?paymentId=" + response.razorpay_payment_id
