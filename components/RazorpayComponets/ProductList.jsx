@@ -22,10 +22,10 @@ const ProductList = () => {
       description: "Integration of Razorpay",
       image: "http://localhost:3000/_next/image?url=%2Flogo.jpg&w=64&q=75",
       handler: async function (response) {
-        // if (response.length == 0) return <Loading />;
-        if (response.status == "unprocessed") {
-          router.push("/paymentsuccess");
-        }
+         if (response.length == 0) return <Loading />;
+        // if (response.status == "unprocessed") {
+        //   router.push("/paymentsuccess");
+        // }
         console.log(response);
 
         const data = await fetch("http://localhost:3000/api/paymentverify", {
