@@ -2,7 +2,7 @@
 import React, { Suspense } from "react";
 import Product from "./Product";
 import { useRouter } from "next/navigation";
-import Loading from "../loading";
+import Loading from "./../Loading";
 
 const ProductList = () => {
   const router = useRouter();
