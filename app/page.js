@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm";
+import Products from "@/components/RazorpayComponets/ProductList";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,7 +9,9 @@ export default function Home() {
         Admission Form
       </h1>
       <p>Fill the fileds to apply for a course at GIHS, Gohpur</p>
-      <ContactForm />
+      <ContactForm />   
+      
+      <Products />
     </div>
   );
 }

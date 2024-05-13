@@ -47,7 +47,7 @@ export async function POST(req) {
       wasStudent,
     });
     return NextResponse.json({
-      msg: ["Message sent successfully!"],
+      msg: ["Admission form submitted successfully!"],
       success: true,
     });
   } catch (error) {
