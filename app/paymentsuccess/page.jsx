@@ -1,10 +1,25 @@
 "use client";
-import { useSearchParams } from "next/navigation";
+
+import { useEffect, useState } from "react";
+
+//import { useSearchParams } from "next/navigation";
 
 const SuccessPage = () => {
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
-  const search = searchParams.get("paymentId");
+  // const search = searchParams.get("paymentId");
+
+  const [paymentId, setPaymentId] = useState(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+
+    setPaymentId(params.get("paymentId"));
+  }, []);
+
+  if (!paymentId) {
+    return null;
+  }
 
   return (
     <div className="flex items-center justify-center m-10 flex-col h-[70vh] bg-gray-100 rounded-lg">
@@ -13,7 +28,7 @@ const SuccessPage = () => {
       <span className="bg-green-400 p-8 m-4 rounded-md mt-10 ">
         Your payment ID is:{" "}
         <p className="mt-2 font-bold text-yellow-900 bg-white p-2 rounded-md">
-          {search.slice(4)}
+          {paymentId.slice(4)}
         </p>
       </span>
     </div>
