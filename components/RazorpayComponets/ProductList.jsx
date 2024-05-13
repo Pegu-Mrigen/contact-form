@@ -28,7 +28,7 @@ const ProductList = () => {
         // }
         console.log(response);
 
-        const data = await fetch("http://localhost:3000/api/paymentverify", {
+        const data = await fetch("https://admission-form-kbpb.onrender.com/api/paymentverify", {
           method: "POST",
           body: JSON.stringify({
             razorpay_payment_id: response.razorpay_payment_id,
